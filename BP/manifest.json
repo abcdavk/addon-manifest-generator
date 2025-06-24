@@ -2,8 +2,8 @@
 	"format_version": 2,
 	"header": {
 		"name": "Addon Template",
-		"description": "Cool addon temolate!",
-		"uuid": "ac13fc12-7d78-48de-91a8-158f4d19ace7",
+		"description": "Cool addon template!",
+		"uuid": "f01437fb-1b54-4c1e-8a6b-a46fcedadb7c",
 		"version": [
 			1,
 			0,
@@ -18,17 +18,37 @@
 	"modules": [
 		{
 			"type": "data",
-			"uuid": "e9fcba04-08f9-474f-a52e-bb3ba509686f",
+			"uuid": "f5d9710e-d07b-430f-9aea-70fad3617491",
 			"version": [
 				1,
 				0,
 				0
 			]
+		},
+		{
+			"type": "data",
+			"uuid": "fb9bd978-f7c6-4bae-ac46-1ee231a913b3",
+			"version": [
+				1,
+				0,
+				0
+			],
+			"description": "Script Resource",
+			"language": "javascript",
+			"entry": "scripts/main.js"
 		}
 	],
 	"dependencies": [
 		{
-			"uuid": "c15da31e-7a10-4bec-ad37-f76d11a3b255",
+			"module_name": "@minecraft/server",
+			"version": "2.0.0"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "2.0.0"
+		},
+		{
+			"uuid": "b5de48d6-1f97-489f-89eb-02b929808099",
 			"version": [
 				1,
 				0,

@@ -1,0 +1,28 @@
+{
+	"format_version": 0,
+	"header": {
+		"name": "Addon Template",
+		"description": "Cool addon template!",
+		"uuid": "b5de48d6-1f97-489f-89eb-02b929808099",
+		"version": [
+			1,
+			0,
+			0
+		],
+		"min_engine_version": [
+			1,
+			21,
+			0
+		]
+	},
+	"dependencies": [
+		{
+			"uuid": "f01437fb-1b54-4c1e-8a6b-a46fcedadb7c",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	]
+}
