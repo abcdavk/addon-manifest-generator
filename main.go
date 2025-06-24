@@ -171,6 +171,9 @@ func main() {
 		log.Fatal(err)
 	}
 
+	os.Mkdir("BP", os.ModePerm)
+	os.Mkdir("RP", os.ModePerm)
+
 	err = os.WriteFile("BP/manifest.json", []byte(output), 0666)
 	if err != nil {
 		log.Fatal(err)
