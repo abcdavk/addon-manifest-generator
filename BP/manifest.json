@@ -1,0 +1,39 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Addon Template",
+		"description": "Cool addon temolate!",
+		"uuid": "ac13fc12-7d78-48de-91a8-158f4d19ace7",
+		"version": [
+			1,
+			0,
+			0
+		],
+		"min_engine_version": [
+			1,
+			21,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "e9fcba04-08f9-474f-a52e-bb3ba509686f",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "c15da31e-7a10-4bec-ad37-f76d11a3b255",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	]
+}
