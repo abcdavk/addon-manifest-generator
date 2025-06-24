@@ -54,6 +54,7 @@ type ManifestBehavior struct {
 type ManifestResources struct {
 	FormatVersion int    `json:"format_version"`
 	Header        Header `json:"header"`
+	Modules       []any  `json:"modules"`
 	Dependencies  []any  `json:"dependencies"`
 }
 
@@ -122,6 +123,7 @@ func main() {
 	}
 
 	mnbp.FormatVersion = 2
+	mnrp.FormatVersion = 2
 
 	mnbp.Header.UUID = uuid.NewString()
 	mnrp.Header.UUID = uuid.NewString()
@@ -145,6 +147,12 @@ func main() {
 		Description: "Script Resource",
 		Lang:        "javascript",
 		Entry:       "scripts/main.js",
+	})
+
+	mnrp.Modules = append(mnrp.Modules, ModuleTypeData{
+		Type:    "resources",
+		UUID:    uuid.NewString(),
+		Version: [3]int{1, 0, 0},
 	})
 
 	mnbp.Dependencies = append(mnbp.Dependencies, DependencyAddon{

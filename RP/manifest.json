@@ -1,9 +1,9 @@
 {
-	"format_version": 0,
+	"format_version": 2,
 	"header": {
 		"name": "Addon Template",
 		"description": "Cool addon template!",
-		"uuid": "b5de48d6-1f97-489f-89eb-02b929808099",
+		"uuid": "757215dc-2a64-4172-a0ce-39d684da7f54",
 		"version": [
 			1,
 			0,
@@ -15,9 +15,20 @@
 			0
 		]
 	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "d45b070f-ec12-41c5-821c-11225f9252e3",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
 	"dependencies": [
 		{
-			"uuid": "f01437fb-1b54-4c1e-8a6b-a46fcedadb7c",
+			"uuid": "9f40ba8b-3510-4eaa-8a5a-bf2295468454",
 			"version": [
 				1,
 				0,
