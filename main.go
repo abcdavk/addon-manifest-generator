@@ -91,22 +91,28 @@ func main() {
 	if useScriptInput == "no" {
 
 	} else {
-		fmt.Print("  @minecraft/server version (default: 2.0.0): ")
+		moduleName := "@minecraft/server"
+		moduleVer := conn(moduleName)
+
+		fmt.Printf("  @minecraft/server version (%s): ", moduleVer)
 		scriptVersionInput, _ := reader.ReadString('\n')
 		scriptVersionInput = strings.TrimSuffix(scriptVersionInput, "\n")
 
 		scriptDepend := DependencyScript{
-			ModuleName: "@minecraft/server",
+			ModuleName: moduleName,
 			Version:    scriptVersionInput,
 		}
 
 		if scriptVersionInput == "" {
-			scriptDepend.Version = "2.0.0"
+			scriptDepend.Version = moduleVer
 		}
 
 		mnbp.Dependencies = append(mnbp.Dependencies, scriptDepend)
 
-		fmt.Print("  @minecraft/server-ui version (default: 2.0.0): ")
+		moduleName = "@minecraft/server"
+		moduleVer = conn(moduleName)
+
+		fmt.Printf("  @minecraft/server-ui version (default: %s): ", moduleVer)
 		scriptUIVersionInput, _ := reader.ReadString('\n')
 		scriptUIVersionInput = strings.TrimSuffix(scriptUIVersionInput, "\n")
 
@@ -116,7 +122,7 @@ func main() {
 		}
 
 		if scriptUIVersionInput == "" {
-			scriptUIDepend.Version = "2.0.0"
+			scriptUIDepend.Version = moduleVer
 		}
 
 		mnbp.Dependencies = append(mnbp.Dependencies, scriptUIDepend)
