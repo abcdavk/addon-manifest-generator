@@ -1,1 +1,1 @@
-go run main.go conn.go
+go run src/main.go src/conn.go
