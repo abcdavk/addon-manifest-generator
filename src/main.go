@@ -70,8 +70,8 @@ func main() {
 		mnbp.Header.Name = addonNameInput
 		mnrp.Header.Name = addonNameInput
 	} else {
-		mnbp.Header.Name = "Addon Template"
-		mnrp.Header.Name = "Addon Template"
+		mnbp.Header.Name = "This is addon name"
+		mnrp.Header.Name = "This is addon name"
 	}
 
 	fmt.Print("Addon Description: ")
@@ -81,8 +81,8 @@ func main() {
 		mnbp.Header.Description = addonDescInput
 		mnrp.Header.Description = addonDescInput
 	} else {
-		mnbp.Header.Description = "Cool addon template!"
-		mnrp.Header.Description = "Cool addon template!"
+		mnbp.Header.Description = "This is description!"
+		mnrp.Header.Description = "This is description!"
 	}
 
 	fmt.Print("Use script API? (yes/no): ")
@@ -109,7 +109,7 @@ func main() {
 
 		mnbp.Dependencies = append(mnbp.Dependencies, scriptDepend)
 
-		moduleName = "@minecraft/server"
+		moduleName = "@minecraft/server-ui"
 		moduleVer = conn(moduleName)
 
 		fmt.Printf("  @minecraft/server-ui version (default: %s): ", moduleVer)
@@ -126,6 +126,15 @@ func main() {
 		}
 
 		mnbp.Dependencies = append(mnbp.Dependencies, scriptUIDepend)
+
+		mnbp.Modules = append(mnbp.Modules, ModuleTypeScript{
+			Type:        "script",
+			UUID:        uuid.NewString(),
+			Version:     [3]int{1, 0, 0},
+			Description: "Script Resource",
+			Lang:        "javascript",
+			Entry:       "scripts/main.js",
+		})
 	}
 
 	mnbp.FormatVersion = 2
@@ -144,15 +153,6 @@ func main() {
 		Type:    "data",
 		UUID:    uuid.NewString(),
 		Version: [3]int{1, 0, 0},
-	})
-
-	mnbp.Modules = append(mnbp.Modules, ModuleTypeScript{
-		Type:        "data",
-		UUID:        uuid.NewString(),
-		Version:     [3]int{1, 0, 0},
-		Description: "Script Resource",
-		Lang:        "javascript",
-		Entry:       "scripts/main.js",
 	})
 
 	mnrp.Modules = append(mnrp.Modules, ModuleTypeData{
