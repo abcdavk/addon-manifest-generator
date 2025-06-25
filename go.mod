@@ -1,4 +1,4 @@
-module abcdavk/starter-addon
+module abcdavk/addon-manifest-generator
 
 go 1.24.4
 

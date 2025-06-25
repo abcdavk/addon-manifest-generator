@@ -171,10 +171,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	os.Mkdir("BP", os.ModePerm)
-	os.Mkdir("RP", os.ModePerm)
+	os.Mkdir("packs", os.ModePerm)
+	os.Mkdir("packs/BP", os.ModePerm)
+	os.Mkdir("packs/RP", os.ModePerm)
 
-	err = os.WriteFile("BP/manifest.json", []byte(output), 0666)
+	err = os.WriteFile("packs/BP/manifest.json", []byte(output), 0666)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -185,12 +186,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	err = os.WriteFile("RP/manifest.json", []byte(output), 0666)
+	err = os.WriteFile("packs/RP/manifest.json", []byte(output), 0666)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	println("Successfully created manifests!")
-	println("BP/manifest.json")
-	println("RP/manifest.json")
+	println("packs/BP/manifest.json")
+	println("packs/RP/manifest.json")
 }
