@@ -91,7 +91,7 @@ func main() {
 	if useScriptInput == "no" {
 
 	} else {
-		fmt.Print("Script API version (default: 2.0.0): ")
+		fmt.Print("  @minecraft/server version (default: 2.0.0): ")
 		scriptVersionInput, _ := reader.ReadString('\n')
 		scriptVersionInput = strings.TrimSuffix(scriptVersionInput, "\n")
 
@@ -106,7 +106,7 @@ func main() {
 
 		mnbp.Dependencies = append(mnbp.Dependencies, scriptDepend)
 
-		fmt.Print("Script UI version (default: 2.0.0): ")
+		fmt.Print("  @minecraft/server-ui version (default: 2.0.0): ")
 		scriptUIVersionInput, _ := reader.ReadString('\n')
 		scriptUIVersionInput = strings.TrimSuffix(scriptUIVersionInput, "\n")
 
